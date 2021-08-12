@@ -119,42 +119,6 @@ function mouseClicked(){
     for(var move of moves){
         move.checkClick();
     }
-
-    // if(mouseX >= 680 && mouseX <= 1080 && mouseY >= 550 && mouseY <= 615 && document.getElementById("moves").style.display != "none"){
-    //     // used SUPERPOWER
-    //     document.getElementById("moves").style.display = "none";
-    //     playerPokemon.dealDamage((playerPokemon.calcDamage({
-    //         "move": {
-    //             "power": 120,
-    //             "type": "Fighting",
-    //             "special": false
-    //         },
-    //         "weather": "None"
-    //     },enemyPokemon)),enemyPokemon)
-    //     updateTooltips()
-    // }else if(mouseX >= 680 && mouseX <= 1080 && mouseY >= 620 && mouseY < 685 && document.getElementById("moves").style.display != "none"){
-    //     document.getElementById("moves").style.display = "none";
-    //     playerPokemon.dealDamage((playerPokemon.calcDamage({
-    //         "move": {
-    //             "power": 80,
-    //             "type": "Psychic",
-    //             "special": false
-    //         },
-    //         "weather": "None"
-    //     },enemyPokemon)),enemyPokemon)
-    //     updateTooltips()
-    // }else if(mouseX >= 680 && mouseX <= 1080 && mouseY >= 620 && mouseY <= 755 && document.getElementById("moves").style.display != "none"){
-    //     document.getElementById("moves").style.display = "none";
-    //     playerPokemon.dealDamage((playerPokemon.calcDamage({
-    //         "move": {
-    //             "power": 120,
-    //             "type": "Poison",
-    //             "special": false
-    //         },
-    //         "weather": "None"
-    //     },enemyPokemon)),enemyPokemon)
-    //     updateTooltips()
-    // }
 }
 
 function updateTooltips(){
@@ -164,7 +128,6 @@ function updateTooltips(){
     enemyhealthbar.style.width = (enemyPokemon.hp/enemymaxhp)*100 + "%";
     playerhealthbar.style.width = (playerPokemon.hp/playermaxhp)*100 + "%";
     playerhealthtext = playerPokemon.hp + "/" + playermaxhp;
-
 }
 
 var pokemondata = {
