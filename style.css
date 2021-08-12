@@ -1,0 +1,78 @@
+.healthbar>div {
+    background-color: orange;
+    width: 100%;
+    /* Adjust with JavaScript */
+    height: 8px;
+}
+.healthbar {
+    background-color: black;
+    /* (height of inner div) / 2 + padding */
+    padding: 0px;
+    width:340px;
+    height:8px;
+}
+
+.levelbar>div {
+    background-color: lightblue;
+    width: 100%;
+    /* Adjust with JavaScript */
+    height: 8px;
+}
+.levelbar {
+    position:absolute;
+    background-color: black;
+    /* (height of inner div) / 2 + padding */
+    padding: 0px;
+    width:150px;
+    height:8px;
+    top:455px;
+    left: 215.5px;
+}
+  
+
+#playertooltip .healthbar{
+    position: absolute;
+    top: 445px;
+    left: 25px;
+}
+#enemytooltip .healthbar{
+    position: absolute;
+    top: 52px;
+    left: 755px;
+    width:320px;
+}
+
+#playertooltip img{
+    width: 400px;
+    height:100px;
+    margin: 0;
+    padding: 0;
+    position:absolute;
+    top:400px;
+}
+#enemytooltip img{
+    width:400px;
+    height:70px;
+    margin:0;
+    padding:0;
+    position:absolute;
+    left:705px;
+}
+canvas{
+    background-image:url("img/background.jpg");
+    background-size: cover;
+    margin:0;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -100;
+}
+.healthtext{
+    position:absolute;
+    z-index: 100;
+    top:458px;
+    left:25px;
+    font-size:25px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
