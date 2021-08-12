@@ -1,4 +1,4 @@
-var playerPokemon, enemyPokemon, playerImage, enemyImage, enemymaxhp, playermaxhp, superpower, symbols;
+var playerPokemon, enemyPokemon, playerImage, enemyImage, superpower, symbols, backgroundImage;
 var types = ["Fighting"]
 var typecolors = ["#f0818e"]
 var moves = [];
@@ -7,6 +7,7 @@ var moves = [];
 function preload(){
     playerImage = loadImage("img/panchamback.png")
     enemyImage = loadImage("img/pangorofront.png")
+    backgroundImage = loadImage("img/background.jpg")
 
     symbols = [];
     for(var curtype of types){
@@ -18,14 +19,16 @@ function setup(){
     createCanvas(1100,800);
     enemyPokemon = new Pokemon("Pangoro",{"HP": 31, "Atk": 31, "Def": 31},{"HP": 252, "Atk": 252, "Def": 252},700,235,300,300,enemyImage);
     playerPokemon = new Pokemon("Pancham",{"HP": 31, "Atk": 31, "Def": 31},{"HP": 252, "Atk": 252, "Def": 252},300,520,150,200,playerImage);
-    playerPokemon.draw();
-    enemyPokemon.draw();
-    enemymaxhp = enemyPokemon.hp;
-    playermaxhp = playerPokemon.hp;
     moves.push(new PokemonMove(620,500,450,75,8,120,"Fighting","Superpower",false))
+}
+
+function draw(){
+    image(backgroundImage,0,0,1100,800)
     for(var move of moves){
         move.draw();
     }
+    if(playerPokemon.alive){playerPokemon.draw()};
+    if(enemyPokemon.alive){enemyPokemon.draw()};
 }
 
 class PokemonMove{
@@ -97,6 +100,7 @@ class Pokemon{
         this.h = h;
         this.hp = (2*GetData(this.name,"HP")+this.ivs.HP+(this.evs.HP/4))+110;
         this.alive = true;
+        this.maxhp = this.hp;
     }
     draw(){
         image(this.img,this.x,this.y,this.w,this.h)
@@ -109,6 +113,7 @@ class Pokemon{
         if(p.hp <= 0){
             p.hp = 0;
             p.alive = false;
+            P("#enemytooltip").hide();
         }
     }
 }
@@ -125,9 +130,9 @@ function updateTooltips(){
     var enemyhealthbar = document.querySelector("#enemytooltip .healthbar div");
     var playerhealthbar = document.querySelector("#playertooltip .healthbar div");
     var playerhealthtext = document.querySelector(".healthtext");
-    enemyhealthbar.style.width = (enemyPokemon.hp/enemymaxhp)*100 + "%";
-    playerhealthbar.style.width = (playerPokemon.hp/playermaxhp)*100 + "%";
-    playerhealthtext = playerPokemon.hp + "/" + playermaxhp;
+    enemyhealthbar.style.width = (enemyPokemon.hp/enemyPokemon.maxhp)*100 + "%";
+    playerhealthbar.style.width = (playerPokemon.hp/playerPokemon.maxhp)*100 + "%";
+    playerhealthtext = playerPokemon.hp + "/" + playerPokemon.maxhp;
 }
 
 var pokemondata = {

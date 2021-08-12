@@ -59,7 +59,6 @@
     left:705px;
 }
 canvas{
-    background-image:url("img/background.jpg");
     background-size: cover;
     margin:0;
     position:absolute;
