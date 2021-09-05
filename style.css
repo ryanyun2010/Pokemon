@@ -4,12 +4,13 @@
     /* Adjust with JavaScript */
     height: 8px;
 }
+
 .healthbar {
     background-color: black;
     /* (height of inner div) / 2 + padding */
     padding: 0px;
-    width:340px;
-    height:8px;
+    width: 340px;
+    height: 8px;
 }
 
 .levelbar>div {
@@ -18,60 +19,87 @@
     /* Adjust with JavaScript */
     height: 8px;
 }
+
 .levelbar {
-    position:absolute;
+    position: absolute;
     background-color: black;
     /* (height of inner div) / 2 + padding */
     padding: 0px;
-    width:150px;
-    height:8px;
-    top:455px;
+    width: 150px;
+    height: 8px;
+    top: 455px;
     left: 215.5px;
 }
-  
 
-#playertooltip .healthbar{
+#playertooltip .healthbar {
     position: absolute;
     top: 445px;
     left: 25px;
 }
-#enemytooltip .healthbar{
+
+#enemytooltip .healthbar {
     position: absolute;
     top: 52px;
     left: 755px;
-    width:320px;
+    width: 320px;
 }
 
-#playertooltip img{
+#playertooltip img {
     width: 400px;
-    height:100px;
+    height: 100px;
     margin: 0;
     padding: 0;
-    position:absolute;
-    top:400px;
+    position: absolute;
+    top: 400px;
 }
-#enemytooltip img{
-    width:400px;
-    height:70px;
-    margin:0;
-    padding:0;
-    position:absolute;
-    left:705px;
+
+#enemytooltip img {
+    width: 400px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 705px;
 }
-canvas{
+
+canvas {
     background-size: cover;
-    margin:0;
-    position:absolute;
-    top:0;
-    left:0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: -100;
 }
-.healthtext{
-    position:absolute;
+
+.healthtext {
+    position: absolute;
     z-index: 100;
-    top:458px;
-    left:25px;
-    font-size:25px;
+    top: 458px;
+    left: 25px;
+    font-size: 25px;
     font-family: sans-serif;
     letter-spacing: 1px;
+}
+
+#popupimg {
+    visibility: hidden;
+    position: absolute;
+    top: 670px;
+    height: 130px;
+    width: 1000px;
+    left: 50px;
+    border-radius: 40px 40px 0 0;
+}
+
+#popuptext {
+    position: absolute;
+    top: 670px;
+    left: 125px;
+    text-align: left;
+    width: 1000px;
+    visibility: hidden;
+    z-index: 100000;
+    color: white;
+    font-weight: 500;
+    font-family: sans-serif;
 }
