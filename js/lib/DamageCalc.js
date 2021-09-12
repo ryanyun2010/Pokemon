@@ -1,6 +1,5 @@
 function Calc(pokemon1, pokemon2, pow, movetype, weather, healthivs, healthevs, atkivs, atkevs, defivs, defevs, naturebuff, naturedebuff, special) {
     var multis = FindMultipliers(pokemon1, pokemon2, pow, movetype, weather, healthivs, healthevs, atkivs, atkevs, defivs, defevs, naturebuff, naturedebuff, special)
-    console.log(multis);
     return CheckDmg(multis[0], multis[1], multis[2], multis[3], multis[4], multis[5], multis[6], multis[7])
 
 }

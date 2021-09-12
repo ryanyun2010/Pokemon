@@ -50,12 +50,12 @@ var movesdata = [{
     "type": "Poison",
     "name": "Gunk Shot",
     "special": false
-}];
+}, ];
 
 
 function preload() {
-    playerImage = loadImage("img/panchamback.png");
-    enemyImage = loadImage("img/pangorofront.png");
+    playerImage = loadImage("img/pokemon/pancham/back.png");
+    enemyImage = loadImage("img/pokemon/pangoro/front.png");
     backgroundImage = loadImage("img/background.jpg");
 
     symbols = [];

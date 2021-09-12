@@ -4,7 +4,6 @@ function createMoves() {
         moves.push(new PokemonMove(curmove.slot, curmove.pp, curmove.power, curmove.type, curmove.name, curmove.special));
     }
 }
-console.log(typecolors, symbols);
 class PokemonMove {
     constructor(slot, pp, power, type, name, special) {
         this.type = type;
@@ -46,9 +45,7 @@ class PokemonMove {
                 enemyPokemon.randomMove();
             } else {
                 enemyPokemon.randomMove();
-                if (playerPokemon.alive) {
-                    playerPokemon.useMove(playerPokemon.moveset[this.slot]);
-                }
+                playerPokemon.useMove(playerPokemon.moveset[this.slot]);
                 updateTooltips();
             }
         }

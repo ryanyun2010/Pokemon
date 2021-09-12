@@ -43,13 +43,15 @@ class Pokemon {
             "weather": "None"
         };
         if (this.alive) {
+            console.log("test")
             popupController.showText(this.name + " used " + move.name + "!", function(pokemon, data) {
-                console.log(pokemon, data)
+
                 if (pokemon.enemy) {
                     pokemon.dealDamage(data, playerPokemon);
                 } else {
                     pokemon.dealDamage(data, enemyPokemon);
                 }
+                updateTooltips();
             }, this, movedata);
         }
 
